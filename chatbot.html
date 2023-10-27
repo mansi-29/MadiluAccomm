@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FF4500;
+            padding: 15px 25px;
+            border: none;
+            color: white;
+            border-radius: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #chat-container {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-header {
+            background-color: #6b5ce7;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #chat-content {
+            height: 380px;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #e6e6e6;
+        }
+
+        .question {
+            padding: 8px 15px;
+            background-color: #ADD8E6;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .answer {
+            padding: 8px 15px;
+            background-color: yellow;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        #next-button {
+            display: none;
+            margin: 10px;
+            background-color: #ADD8E6;
+            padding: 5px 15px;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #close-button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="chat-button">Chat with Us</button>
+
+    <div id="chat-container">
+        <div id="chat-header">
+            <strong>My Chatbot</strong>
+            <span id="close-button">X</span>
+        </div>
+        <div id="chat-content">
+            <div class="question" data-answer="4 types">Question 1 - What kind of rooms are there?</div>
+            <div class="answer">Answer 1 - 4 types</div>
+            
+            <div class="question" data-answer="Kumaraswamy Layout">Question 2 - What kind of location?</div>
+            <div class="answer">Answer 2 - Kumaraswamy Layout</div>
+        </div>
+        <button id="next-button">Next Ques</button>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chat-button');
+        const chatContainer = document.getElementById('chat-container');
+        const questions = document.querySelectorAll('.question');
+        const answers = document.querySelectorAll('.answer');
+        const nextButton = document.getElementById('next-button');
+        const closeButton = document.getElementById('close-button');
+
+        chatButton.addEventListener('click', () => {
+            chatContainer.style.display = 'block';
+            chatButton.style.display = 'none';
+        });
+
+        questions.forEach((question, index) => {
+            question.addEventListener('click', () => {
+                // Hide all questions
+                questions.forEach(q => q.style.display = 'none');
+
+                // Display only the clicked question's answer
+                answers[index].style.display = 'block';
+
+                nextButton.style.display = 'block';
+            });
+        });
+
+        nextButton.addEventListener('click', () => {
+            answers.forEach(answer => {
+                answer.style.display = 'none';
+            });
+            questions.forEach(question => {
+                question.style.display = 'block';
+            });
+            nextButton.style.display = 'none';
+        });
+
+        closeButton.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
+            chatButton.style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
