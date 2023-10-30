@@ -13,7 +13,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="https://ibb.co/tbRZ5f5" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -35,80 +35,83 @@
           font-family: Arial, sans-serif;
           background-color: #f4f4f4;
       }
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF4500;
+    padding: 15px 25px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 9999;
+}
 
-      #chat-button {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background-color: #FF4500;
-          padding: 15px 25px;
-          border: none;
-          color: white;
-          border-radius: 15px;
-          font-size: 18px;
-          cursor: pointer;
-          z-index: 9999;
-      }
+#chat-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 450px; /* Increased height */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
 
-      #chat-container {
-          display: none;
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          width: 350px;
-          height: 500px;
-          background-color: #fff;
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          z-index: 9999
-      }
+#chat-header {
+    background-color: #6b5ce7;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-      #chat-header {
-          background-color: #6b5ce7;
-          color: #fff;
-          padding: 10px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-      }
+#chat-content {
+    height: 330px; /* Adjusted height to accommodate the "Go Back" button */
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #e6e6e6;
+}
 
-      #chat-content {
-          height: 380px;
-          padding: 20px;
-          overflow-y: auto;
-          background-color: #e6e6e6;
-      }
+.question {
+    padding: 8px 15px;
+    background-color: #ADD8E6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
 
-      .question {
-          padding: 8px 15px;
-          background-color: #ADD8E6;
-          border-radius: 10px;
-          margin-bottom: 10px;
-          cursor: pointer;
-      }
+.answer {
+    padding: 8px 15px;
+    background-color: yellow;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
 
-      .answer {
-          padding: 8px 15px;
-          background-color: yellow;
-          border-radius: 10px;
-          margin-bottom: 10px;
-          display: none;
-      }
+#next-button {
+    display: none;
+    position: absolute; /* Set position to absolute */
+    bottom: 10px; /* Positioned it at the bottom of the chat-container */
+    left: 10px; /* Positioned it to the left of the chat-container */
+    right: 10px; /* Positioned it to the right of the chat-container */
+    background-color: #ADD8E6;
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
-      #next-button {
-          display: none;
-          margin: 10px;
-          background-color: #ADD8E6;
-          padding: 5px 15px;
-          border: none;
-          color: white;
-          border-radius: 10px;
-          cursor: pointer;
-      }
+#close-button {
+    cursor: pointer;
+}
 
-      #close-button {
-          cursor: pointer;
-      }
   </style>
 </head>
 
